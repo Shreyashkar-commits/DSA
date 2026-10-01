@@ -1,0 +1,29 @@
+package Sorting;
+public class ReverseBetterBubbleSort {
+    public static void print(int[] arr) {
+        for (int ele : arr) {
+            System.out.print(ele + " ");
+        }
+        System.out.println();
+    }
+    static void main() {
+        int[] arr = {5, -2, 6, 7, 2, 0, 7, 2};
+        int n = arr.length;
+        print(arr);
+        // Number of passes
+        for (int i = 0; i < n - 1; i++) {// n-1 passes
+            // Compare adjacent elements
+            int swap =0;
+            for (int j = 0; j < n - 1-i - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swap++;
+                }
+            }
+            if (swap==0) break;
+        }
+        print(arr);
+    }
+}
